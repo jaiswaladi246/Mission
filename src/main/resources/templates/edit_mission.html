@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Mission</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0e1013;
+        color: #ffffff;
+        margin: 0;
+        padding: 20px;
+    }
+    h1, h2 {
+        color: #ff6347;
+        text-align: center;
+    }
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #1f262c;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    input[type="text"], input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        background-color: #333;
+        color: #fff;
+    }
+    input[type="submit"] {
+        background-color: #ff6347;
+        color: #fff;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #e63e00;
+    }
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #ff6347;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+    <h1>Edit Mission for Agent X</h1>
+    <form action="#" method="post">
+        <p>Mission title: <input type="text" name="title" required></p>
+        
+        <h2>Edit the gadgets</h2>
+        Gadget 1: <input type="text" name="gadget1"><br>
+        Gadget 2: <input type="text" name="gadget2"><br><br>
+        <input type="hidden" name="id" value="123">
+        <input type="hidden" name="agent" value="Agent X">
+        <input type="submit" value="Update Mission!">
+    </form>
+    <a href="/">Back to home</a>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>View Missions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff7f50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ffffff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #444444;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #333333;
+        }
+
+        a {
+            color: #ff7f50;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        a.back-link {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a.back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 th:text="|Welcome to ${session.agent}'s Mission Page|">View Missions</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Gadget 1</th>
+            <th>Gadget 2</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="mission : ${session.missionList}">
+            <td th:text="${mission.title}">Mission Title</td>
+            <td th:text="${mission.gadget1}">Gadget 1</td>
+            <td th:text="${mission.gadget2}">Gadget 2</td>
+            <td>
+                <a href="" th:href="|/editMission/${mission.id}|">Edit</a>
+                <a href="" th:href="|/deleteMission/${mission.id}|">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <p><a href="/" class="back-link">Back to Home</a></p>
+</body>
+
+</html>
